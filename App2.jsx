@@ -6,7 +6,7 @@ function useTodos(n) {
   const [todos , setTodos] = useState([]);
   const [loading,setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(() => { //we wrote this logic ourselves but we can use a famous library called useSWR which does the same thing we basically wrote useSWR by ourselves , we can use the useSWR in tthe App function directly
     const value = setInterval(() => { //what it does is that it fetches the random set of todos in every second the most updated way to do is with websockets in todays world but for understanding we are using this old ass setinterval method
       axios.get("https://sum-server.100xdevs.com/todos")
       .then(res => {
